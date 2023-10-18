@@ -36,4 +36,9 @@ const team = [
   },
 ];
 
-console.log(team);
+for (let i = 0; i < team.length; i++) {
+  const person = team[i];
+  console.log(
+    `Nome: ${person.name} Ruolo: ${person.role} Immagine: ${person.image}`
+  );
+}
