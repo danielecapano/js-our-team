@@ -1,3 +1,5 @@
+const grid = document.querySelector(".grid");
+
 const team = [
   {
     name: "Wayne Barnett",
@@ -41,4 +43,17 @@ for (let i = 0; i < team.length; i++) {
   console.log(
     `Nome: ${person.name} Ruolo: ${person.role} Immagine: ${person.image}`
   );
+
+  const card = `
+  <div class="card">
+  <figure class="card-image">
+    <img class="image" src="./img/${person.image}" alt="image" />
+  </figure>
+        <div class="card-body">
+            <p class="card-name">${person.name}</p>
+            <p class="card-role">${person.role}</p>
+        </div>
+    </div>`;
+
+  grid.innerHTML += card;
 }
