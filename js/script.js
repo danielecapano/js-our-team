@@ -38,22 +38,26 @@ const team = [
   },
 ];
 
-for (let i = 0; i < team.length; i++) {
-  const person = team[i];
-  console.log(
-    `Nome: ${person.name} Ruolo: ${person.role} Immagine: ${person.image}`
-  );
+createCard(team, grid);
 
-  const card = `
-  <div class="card">
-  <figure class="card-image">
-    <img class="image" src="./img/${person.image}" alt="image" />
-  </figure>
-        <div class="card-body">
-            <p class="card-name">${person.name}</p>
-            <p class="card-role">${person.role}</p>
-        </div>
-    </div>`;
+function createCard(array, DOMElement) {
+  for (let i = 0; i < array.length; i++) {
+    const person = array[i];
+    console.log(
+      `Nome: ${person.name} Ruolo: ${person.role} Immagine: ${person.image}`
+    );
 
-  grid.innerHTML += card;
+    const card = `
+        <div class="card">
+        <figure class="card-image">
+          <img class="image" src="./img/${person.image}" alt="image" />
+        </figure>
+              <div class="card-body">
+                  <p class="card-name">${person.name}</p>
+                  <p class="card-role">${person.role}</p>
+              </div>
+          </div>`;
+
+    DOMElement.innerHTML += card;
+  }
 }
